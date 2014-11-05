@@ -217,4 +217,21 @@ class ArraySource extends \Nette\Object implements IDataSource
 
         return array_values($items);
     }
+
+
+    /**
+     * @param $idCol
+     * @param $id
+     * @return mixed
+     */
+    public function getRow($idCol, $id)
+    {
+        $data = $this->getData();
+
+        foreach($data as $row)
+        {
+            if($row[$idCol] == $id)
+                return $row;
+        }
+    }
 }

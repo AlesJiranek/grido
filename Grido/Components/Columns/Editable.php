@@ -235,7 +235,7 @@ abstract class Editable extends Column
             : $this->grid->model->update($id, array($this->getColumn() => $newValue), $this->grid->primaryKey);
 	
 	// New lines follow
-	$data = $this->grid->model->getRow($this->grid->primaryKey, $id)->fetch();	
+	$data = $this->grid->model->getRow($this->grid->primaryKey, $id);	
 	$html = $this->render($data);
 	
 	// Also change JSON Response

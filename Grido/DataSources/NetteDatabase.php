@@ -165,6 +165,6 @@ class NetteDatabase extends \Nette\Object implements IDataSource
      */
     public function getRow($idCol, $id) {
 	return $this->getSelection()
-			->where("%n = %s",$idCol, $id);
+			->where("%n = %s",$idCol, $id)->fetch();
     }
 }
